@@ -26,5 +26,9 @@ def gemini_reply():
     r = model.generate_content(q)
     return(render_template("gemini_reply.html",r=r.candidates[0].content.parts[0].text))
 
+@app.route("/paynow",methods=["GET","POST"])
+def paynow():
+    return(render_template("paynow.html"))
+
 if __name__ == "__main__":
     app.run()
